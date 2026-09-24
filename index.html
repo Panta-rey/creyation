@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Creyation – Rey Gafner | Möbelbau, Installationen & Raumgestaltung nach Mass</title>
+<meta name="description" content="Creyation – Rey Gafner, Hinteregg ZH. Möbelbau, Installationen, Raumgestaltung, CNC-Fräsen und 3D-Druck nach Mass. Realizing dreams since 1991.">
+<link rel="canonical" href="https://www.creyation.ch/">
+<meta property="og:site_name" content="Creyation">
+<meta property="og:title" content="Creyation – Rey Gafner">
+<meta property="og:description" content="Einzigartige Umsetzungen nach Mass: Möbel, Installationen, Raumgestaltung. Realizing dreams since 1991.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://static.wixstatic.com/media/68577c_55717d926b1a4b81a8937bdbc1a9ca27~mv2.jpg/v1/fit/w_1200,h_1200,q_85/file.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='black'/><text x='16' y='23' font-family='Arial' font-weight='700' font-size='20' fill='white' text-anchor='middle'>C</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Creyation",
+  "founder": "Rey Gafner",
+  "slogan": "Realizing dreams since 1991",
+  "email": "rey@creyation.ch",
+  "url": "https://www.creyation.ch/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Stifelacher 3",
+    "postalCode": "8132",
+    "addressLocality": "Hinteregg",
+    "addressRegion": "ZH",
+    "addressCountry": "CH"
+  },
+  "sameAs": ["https://www.facebook.com/creyation", "https://www.instagram.com/creyationgafner"]
+}
+</script>
+
+<style>
+/* =========================================================
+   DESIGN-TOKENS – hier Farben & Schriften zentral anpassen
+   ========================================================= */
+:root {
+  --beton:   #D5D3CD;  /* Hintergrund: Werkstatt-Beton */
+  --papier:  #ECEBE7;  /* helle Flächen */
+  --schwarz: #000000;  /* Header / Logo (Logo ist weiss auf schwarz) */
+  --graphit: #2E2F2D;  /* Fliesstext */
+  --petrol:  #1D4B53;  /* Akzent (aus dem Projekt «Das Viertel») */
+  --kupfer:  #9C5B32;  /* Zweitakzent, sparsam (Kupfereffekt-Empfang) */
+  --grau:    #6B6C68;  /* Nebentext */
+
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-text: "Literata", Georgia, "Times New Roman", serif;
+
+  --wrap: 78rem;
+  --gap: clamp(1rem, 3vw, 2rem);
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
+}
+html { scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px)); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: inherit; }
+body {
+  margin: 0;
+  background: var(--beton);
+  color: var(--graphit);
+  font-family: var(--f-text);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--petrol); text-underline-offset: .2em; }
+a:hover { color: var(--kupfer); }
+:focus-visible { outline: 3px solid var(--kupfer); outline-offset: 3px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gap); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+h1, h2, h3 {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  font-family: var(--f-display);
+  font-stretch: 125%;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--schwarz);
+}
+h2 { font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.01em; }
+/* Gesperrte Projekttitel – das Markenzeichen der alten Seite (C H A L E T) */
+.spaced { font-size: clamp(1.4rem, 2.6vw, 2rem); letter-spacing: .42em; text-transform: uppercase; font-weight: 600; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--schwarz); color: #fff;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .9rem; color: #fff; text-decoration: none; }
+.brand img { width: 22px; height: 44px; object-fit: cover; }
+.brand span { font-family: var(--f-display); font-stretch: 125%; font-weight: 600; letter-spacing: .38em; font-size: .95rem; }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: clamp(1rem, 2.5vw, 2.2rem); }
+.nav a { color: #fff; text-decoration: none; font-family: var(--f-display); font-size: .95rem; font-weight: 500; }
+.nav a:hover { color: #d8a27c; }
+.nav-toggle { display: none; background: none; border: 1px solid #fff5; color: #fff; font: 500 .9rem var(--f-display); padding: .5rem .9rem; border-radius: 2px; cursor: pointer; }
+
+@media (max-width: 760px) {
+  .nav-toggle { display: block; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--schwarz); display: none; }
+  .nav.open { display: block; }
+  .nav ul { flex-direction: column; gap: 0; padding: .5rem var(--gap) 1.25rem; }
+  .nav a { display: block; padding: .7rem 0; font-size: 1.15rem; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; min-height: min(100svh, 58rem);
+  display: flex; align-items: flex-end;
+  color: #fff; background: #1a1a1a;
+  overflow: hidden;
+}
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.82) 100%); }
+.hero .wrap { position: relative; z-index: 1; width: 100%; padding-bottom: clamp(2.5rem, 7vh, 5rem); padding-top: 6rem; }
+.steps { list-style: none; margin: 0 0 2rem; padding: 0; counter-reset: step; }
+.steps li {
+  counter-increment: step;
+  font-family: var(--f-display); font-stretch: 125%; font-weight: 800;
+  font-size: clamp(2.6rem, 8.5vw, 7rem); line-height: .98; letter-spacing: -0.02em;
+  display: flex; align-items: baseline; gap: .6rem;
+}
+.steps li::before {
+  content: counter(step);
+  font-size: .9rem; font-weight: 500; letter-spacing: 0; opacity: .6;
+  min-width: 1.2rem; transform: translateY(-1.6em);
+}
+.hero-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; font-size: 1.1rem; }
+.hero-sub p { margin: 0; max-width: 34rem; }
+
+.btn {
+  display: inline-block; font: 600 1rem var(--f-display); text-decoration: none;
+  padding: .85rem 1.4rem; border: 2px solid currentColor; border-radius: 2px;
+  background: transparent; color: inherit; cursor: pointer;
+}
+.btn-solid { background: var(--petrol); border-color: var(--petrol); color: #fff; }
+.btn-solid:hover { background: var(--kupfer); border-color: var(--kupfer); color: #fff; }
+.hero .btn { color: #fff; }
+.hero .btn:hover { background: #fff; color: var(--schwarz); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .steps li { opacity: 0; transform: translateY(.4em); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+  .steps li:nth-child(2) { animation-delay: .25s; }
+  .steps li:nth-child(3) { animation-delay: .5s; }
+  .steps li:nth-child(4) { animation-delay: .75s; }
+  .hero-sub { opacity: 0; animation: fade .8s 1.2s forwards; }
+}
+@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes fade { to { opacity: 1; } }
+
+/* ---------- Sektionen ---------- */
+section { padding: clamp(4rem, 10vw, 8rem) 0; }
+.section-head { margin-bottom: clamp(2rem, 5vw, 3.5rem); max-width: 46rem; }
+.section-head p { margin: 1rem 0 0; font-size: 1.15rem; }
+
+/* Über mich */
+.about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.about figure { margin: 0; }
+.about figure img { width: 100%; aspect-ratio: 1815 / 1602; object-fit: cover; filter: grayscale(.15); }
+.about figcaption { margin-top: 1rem; }
+.about figcaption strong { display: block; font: 700 1.1rem var(--f-display); font-stretch: 125%; letter-spacing: .3em; color: var(--schwarz); }
+.about figcaption span { color: var(--grau); font-style: italic; }
+.about h2 { font-size: clamp(1.8rem, 3.8vw, 2.9rem); margin-bottom: 1.5rem; }
+.about .lead { max-width: 38rem; }
+.about .lead p { margin: 0 0 1.1rem; }
+@media (max-width: 800px) { .about { grid-template-columns: minmax(0, 1fr); } .about figure { max-width: 26rem; } }
+
+/* Leistungen */
+.services { background: var(--papier); }
+.service-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.4rem 2rem;
+}
+.service-list li {
+  font-family: var(--f-display); font-stretch: 112%; font-weight: 600;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem); color: var(--schwarz);
+  padding-left: 1.1rem; border-left: 3px solid var(--petrol); line-height: 1.25;
+}
+
+/* Projekte */
+.project { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(1.5rem, 4vw, 4rem); padding: clamp(2.5rem, 5vw, 4rem) 0; border-top: 1px solid #0002; }
+.project:first-of-type { border-top: 0; padding-top: 0; }
+.project-head { position: sticky; top: 6rem; align-self: start; }
+.project-head .spaced { font-size: clamp(1.15rem, 1.7vw, 1.4rem); letter-spacing: .26em; }
+.project-head .place { font-family: var(--f-display); font-weight: 500; color: var(--petrol); margin: .9rem 0 1rem; }
+.project-head p { margin: 0 0 1rem; max-width: 30rem; }
+.project-head dl { margin: 1.2rem 0 0; font-size: .95rem; }
+.project-head dt { font-family: var(--f-display); font-weight: 600; color: var(--grau); }
+.project-head dd { margin: 0 0 .5rem; }
+@media (max-width: 860px) { .project { grid-template-columns: minmax(0, 1fr); } .project-head { position: static; } }
+
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 7rem; grid-auto-flow: dense; gap: .75rem; }
+.shot { all: unset; cursor: zoom-in; position: relative; overflow: hidden; background: #0001; grid-row: span 3; }
+.shot:focus-visible { outline: 3px solid var(--kupfer); outline-offset: 3px; }
+.shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.shot:hover img { transform: scale(1.03); }
+.shot.wide { grid-column: span 2; grid-row: span 3; }
+.shot.land { grid-row: span 2; }
+.shot.tall { grid-row: span 5; }
+@media (max-width: 520px) { .gallery { grid-auto-rows: 5rem; } }
+
+/* Aktuell */
+.news { background: var(--schwarz); color: #e9e8e4; }
+.news h2, .news h3 { color: #fff; }
+.news-item { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
+.news-item img { width: 100%; aspect-ratio: 1606 / 890; object-fit: cover; }
+.news-item p { max-width: 34rem; }
+.news-item .tag { font-family: var(--f-display); color: #d8a27c; font-weight: 500; margin: 0 0 .8rem; }
+@media (max-width: 860px) { .news-item { grid-template-columns: minmax(0, 1fr); } }
+
+/* Shop */
+.products { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: clamp(1.25rem, 3vw, 2rem); }
+.product { background: var(--papier); display: flex; flex-direction: column; }
+.product img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; }
+.product-body { padding: 1.25rem 1.25rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.product h3 { font-size: 1.25rem; font-stretch: 112%; margin-bottom: .5rem; }
+.product p { margin: 0 0 1rem; font-size: .98rem; }
+.product .price { font-family: var(--f-display); font-weight: 600; color: var(--petrol); margin-top: auto; margin-bottom: 1rem; }
+.product .btn { align-self: flex-start; }
+.shop-note { margin-top: 2rem; font-size: .95rem; color: var(--grau); }
+
+/* Kontakt */
+.contact { background: var(--papier); }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 5rem); }
+.contact address { font-style: normal; font-size: 1.15rem; margin: 1.5rem 0; }
+.social { display: flex; gap: 1.2rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.social a { font-family: var(--f-display); font-weight: 600; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; }
+.field { display: flex; flex-direction: column; gap: .35rem; }
+.field.full { grid-column: 1 / -1; }
+label { font-family: var(--f-display); font-weight: 600; font-size: .9rem; color: var(--schwarz); }
+input, textarea {
+  font: inherit; font-size: 1rem; padding: .75rem .85rem; border: 1px solid #0003; border-radius: 2px;
+  background: #fff; color: var(--graphit); width: 100%;
+}
+input:focus, textarea:focus { outline: 2px solid var(--petrol); outline-offset: 0; border-color: var(--petrol); }
+textarea { min-height: 9rem; resize: vertical; }
+.form-status { grid-column: 1 / -1; margin: 0; min-height: 1.7em; color: var(--petrol); }
+@media (max-width: 800px) { .contact-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { form { grid-template-columns: 1fr; } }
+
+/* Footer */
+.site-footer { background: var(--schwarz); color: #bdbcb7; padding: 3rem 0 calc(2rem + env(safe-area-inset-bottom, 0px)); font-size: .92rem; }
+.site-footer .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 2rem; }
+.site-footer a { color: #fff; }
+.site-footer h2 { font-size: 1rem; color: #fff; font-stretch: 112%; margin-bottom: .6rem; }
+.site-footer p { margin: 0; }
+
+/* Lightbox */
+dialog.lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+dialog.lightbox::backdrop { background: rgba(0,0,0,.92); }
+.lb-inner { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5rem 4rem 1.5rem; gap: 1rem; }
+.lb-inner img { max-height: calc(100vh - 10rem); max-width: 100%; object-fit: contain; }
+.lb-caption { color: #e9e8e4; max-width: 44rem; text-align: center; margin: 0; font-size: 1rem; }
+.lb-btn { position: absolute; background: none; border: 0; color: #fff; font: 500 2rem/1 var(--f-display); cursor: pointer; padding: .8rem 1rem; }
+.lb-close { top: calc(.5rem + env(safe-area-inset-top, 0px)); right: .5rem; font-size: 1rem; border: 1px solid #fff6; border-radius: 2px; padding: .5rem .9rem; }
+.lb-prev { left: .25rem; top: 50%; transform: translateY(-50%); }
+.lb-next { right: .25rem; top: 50%; transform: translateY(-50%); }
+@media (max-width: 600px) { .lb-inner { padding: 3.5rem .75rem 1rem; } .lb-prev, .lb-next { top: auto; bottom: 1rem; transform: none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Creyation – zur Startseite">
+      <img src="https://static.wixstatic.com/media/68577c_cd87cdf7124b416c8099ca86688aa4e2~mv2_d_3984_3421_s_4_2.jpg/v1/crop/x_1194,y_0,w_1614,h_3403/fill/w_88,h_176,al_c,q_90/logo.jpg" alt="" width="22" height="44">
+      <span>CREYATION</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#projekte">Projekte</a></li>
+        <li><a href="#aktuell">Aktuell</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#ueber">Über mich</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-labelledby="hero-title" style="padding:0">
+    <img class="hero-bg" src="https://static.wixstatic.com/media/68577c_1827deb137c9410cb0649aa65b9e767d~mv2_d_2407_2455_s_4_2.jpg/v1/fit/w_2000,h_2000,q_85/hero.jpg" alt="">
+    <div class="wrap">
+      <h1 id="hero-title" class="visually-hidden">Creyation – Rey Gafner: Einzigartigkeit und Individualität</h1>
+      <ol class="steps" aria-label="So arbeiten wir zusammen">
+        <li>Have a seat</li>
+        <li>dream</li>
+        <li>we talk</li>
+        <li>I build</li>
+      </ol>
+      <div class="hero-sub">
+        <p>Einzigartigkeit und Individualität – Möbel, Installationen und Räume nach Mass.</p>
+        <a class="btn" href="#kontakt">Projekt besprechen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ÜBER MICH ================= -->
+  <section id="ueber" aria-labelledby="ueber-title">
+    <div class="wrap about">
+      <figure>
+        <img src="https://static.wixstatic.com/media/68577c_2af2088e62894aca86ffa5799ccacfdc~mv2_d_2059_3264_s_2.jpg/v1/crop/x_128,y_420,w_1815,h_1602/fill/w_900,h_794,al_c,q_85/rey-gafner.jpg" alt="Rey Gafner" width="900" height="794" loading="lazy">
+        <figcaption><strong>REY GAFNER</strong><span>Realizing dreams since 1991</span></figcaption>
+      </figure>
+      <div class="lead">
+        <h2 id="ueber-title">Jeder Mensch ist in seiner Art einzigartig und individuell.</h2>
+        <p>Diese Individualität findet in der industriellen Massenproduktion keinen Platz. Ich habe mich als Allrounder darauf spezialisiert, in enger Zusammenarbeit mit meinen Kunden diese Individualität zurückzubringen.</p>
+        <p>Ihre Idee mag noch so fantasievoll sein: Ich entwickle sie weiter und finde für Sie die passende Umsetzung. Seien Sie Sie selbst und realisieren Sie mit mir zusammen ein Produkt, an dem Sie lange Freude haben werden, weil es Sie und Ihre persönliche Philosophie widerspiegelt.</p>
+        <p>Fallen Sie auf – durch einzigartige und massgeschneiderte Umsetzungen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LEISTUNGEN ================= -->
+  <section class="services" aria-labelledby="leistungen-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="leistungen-title">Ihr kompetenter Partner für</h2>
+      </div>
+      <ul class="service-list">
+        <li>Visuelle Konzepte</li>
+        <li>Engineering</li>
+        <li>CAD-Zeichnungen</li>
+        <li>CNC-Fräsen</li>
+        <li>3D-Druck</li>
+        <li>Möbelbau & Design</li>
+        <li>Camper-Ausbau</li>
+        <li>Installationen</li>
+        <li>Skulpturen</li>
+        <li>Werbeauftritte</li>
+        <li>Messestand-Design</li>
+        <li>Lounge-Design</li>
+        <li>Temporäre Raumgestaltung</li>
+        <li>Beständige Raumausbauten</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= PROJEKTE ================= -->
+  <section id="projekte" aria-labelledby="projekte-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projekte-title">Projekte</h2>
+        <p>Eine Auswahl umgesetzter Arbeiten. Klicken Sie auf ein Bild, um es gross anzusehen.</p>
+      </div>
+
+      <!-- Projekt: Kinderspielburg -->
+      <article class="project" aria-labelledby="p1">
+        <header class="project-head">
+          <h3 id="p1" class="spaced">Kinder&shy;spielburg</h3>
+          <p class="place">Bläsikrippe, Basel</p>
+          <p>Für die Bläsikrippe in Basel wurde eine Kinderburg entworfen, deren Design fernab von konventionellen Spielhäuschen sein sollte. Eine Spielburg, die neben Spiel und Spass zum Fantasieren einlädt.</p>
+        </header>
+        <div class="gallery">
+          <button class="shot wide" data-full="https://static.wixstatic.com/media/68577c_0e100bdf9e8b4327921d0b53f00fbd3a~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Kinderspielburg für die Bläsikrippe in Basel."><img src="https://static.wixstatic.com/media/68577c_0e100bdf9e8b4327921d0b53f00fbd3a~mv2.jpg/v1/fit/w_1400,h_1400,q_80/file.jpg" alt="Kinderspielburg, Gesamtansicht" loading="lazy"></button>
+          <button class="shot land" data-full="https://static.wixstatic.com/media/68577c_75ac97b8a6044e7c8169ac51317424ff~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Kinderspielburg"><img src="https://static.wixstatic.com/media/68577c_75ac97b8a6044e7c8169ac51317424ff~mv2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Kinderspielburg, Ansicht" loading="lazy"></button>
+          <button class="shot land" data-full="https://static.wixstatic.com/media/68577c_2d1ba051f60140ef8e31df2e554ff38d~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Kinderspielburg"><img src="https://static.wixstatic.com/media/68577c_2d1ba051f60140ef8e31df2e554ff38d~mv2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Kinderspielburg, Detail" loading="lazy"></button>
+          <button class="shot tall" data-full="https://static.wixstatic.com/media/68577c_039a91849c744ede8aa342fbfb167ad3~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Kinderspielburg"><img src="https://static.wixstatic.com/media/68577c_039a91849c744ede8aa342fbfb167ad3~mv2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Kinderspielburg, Hochformat" loading="lazy"></button>
+          <button class="shot" data-full="https://static.wixstatic.com/media/68577c_98e0c77591c749efb4cdf60fcad88e67~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Das Innere der Spielburg lädt zum Träumen ein. Gibt es etwas Schöneres als ein Mittagsschläfchen unter den Sternen?"><img src="https://static.wixstatic.com/media/68577c_98e0c77591c749efb4cdf60fcad88e67~mv2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Innenraum der Spielburg mit Sternenhimmel" loading="lazy"></button>
+        </div>
+      </article>
+
+      <!-- Projekt: Chalet -->
+      <article class="project" aria-labelledby="p2">
+        <header class="project-head">
+          <h3 id="p2" class="spaced">Chalet</h3>
+          <p class="place">Das_Viertel, Basel</p>
+          <p>Für Das_Viertel in Basel wurde ein modulares Chalet entworfen, das sich in handliche Einzelteile zerlegen lässt. Kurzerhand wird eine ungenutzte Aussenfläche nutzbar. Draussen tobt der Winter, drinnen ein warmes Fest.</p>
+          <dl>
+            <dt>Dimension</dt><dd>12 × 6 × 4.5 m</dd>
+            <dt>Option</dt><dd>Doppelverglaste Plexiglasfenster in gewünschten Wandelementen</dd>
+          </dl>
+        </header>
+        <div class="gallery">
+          <button class="shot wide" data-full="https://static.wixstatic.com/media/68577c_55717d926b1a4b81a8937bdbc1a9ca27~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Modulares Chalet für Das_Viertel in Basel."><img src="https://static.wixstatic.com/media/68577c_55717d926b1a4b81a8937bdbc1a9ca27~mv2.jpg/v1/fit/w_1400,h_1400,q_80/file.jpg" alt="Modulares Chalet, Gesamtansicht" loading="lazy"></button>
+          <button class="shot tall" data-full="https://static.wixstatic.com/media/68577c_1cd70979bd5048bda8cd27b4b1e46149~mv2_d_3264_4896_s_4_2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Optional können doppelverglaste Plexiglasfenster in die gewünschten Wandelemente eingelassen werden."><img src="https://static.wixstatic.com/media/68577c_1cd70979bd5048bda8cd27b4b1e46149~mv2_d_3264_4896_s_4_2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Chalet-Wandelement mit Plexiglasfenster" loading="lazy"></button>
+          <button class="shot land" data-full="https://static.wixstatic.com/media/68577c_70f42a8cd30c4461b3e0ecac3d36f4f8~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Sparren für Sparren wird das Dach aufgebaut."><img src="https://static.wixstatic.com/media/68577c_70f42a8cd30c4461b3e0ecac3d36f4f8~mv2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Aufbau der Dachsparren" loading="lazy"></button>
+          <button class="shot" data-full="https://static.wixstatic.com/media/68577c_607e1566a5e4457fb3b57c91ec549c2a~mv2_d_3024_4032_s_4_2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Trotz der Grösse: Präzision."><img src="https://static.wixstatic.com/media/68577c_607e1566a5e4457fb3b57c91ec549c2a~mv2_d_3024_4032_s_4_2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Präzise Holzverbindung am Chalet" loading="lazy"></button>
+          <button class="shot land" data-full="https://static.wixstatic.com/media/68577c_1b808b7e1d4841dab651f7291d62f325~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Wandelement für Wandelement wird die Grundstruktur zusammengesteckt."><img src="https://static.wixstatic.com/media/68577c_1b808b7e1d4841dab651f7291d62f325~mv2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Zusammenstecken der Wandelemente" loading="lazy"></button>
+        </div>
+      </article>
+
+      <!-- Projekt: Das Viertel -->
+      <article class="project" aria-labelledby="p3">
+        <header class="project-head">
+          <h3 id="p3" class="spaced">Das Viertel</h3>
+          <p class="place">Club Das_Viertel, Basel</p>
+          <p>Renovationsarbeiten im Basler Club Das_Viertel. Der erste Eindruck zählt: Der Empfangs- und Garderobenbereich wurde in einem Kupfereffektton gestrichen, um den Gästen einen warmen Empfang zu bieten. Dieses Wohlgefühl wird durch eine zentrale Insel-Installation unterstützt – naturbelassen und von innen warmweiss ausgeleuchtet.</p>
+        </header>
+        <div class="gallery">
+          <button class="shot wide" data-full="https://static.wixstatic.com/media/68577c_41ceda1fb5bb474a8cf2d1b52b91c69f~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Im Aussenbereich wurde eine neue Lounge entworfen. Reduziertes, schlichtes Design kombiniert mit naturbelassenen Materialien – ein leichtes, natürliches Loungedesign."><img src="https://static.wixstatic.com/media/68577c_41ceda1fb5bb474a8cf2d1b52b91c69f~mv2.jpg/v1/fit/w_1400,h_1400,q_80/file.jpg" alt="Aussenlounge aus naturbelassenem Holz" loading="lazy"></button>
+          <button class="shot land" data-full="https://static.wixstatic.com/media/68577c_23da230041ca4c7494a8637dd04324f5~mv2_d_4032_3024_s_4_2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Empfangs- und Garderobenbereich im Kupfereffektton."><img src="https://static.wixstatic.com/media/68577c_23da230041ca4c7494a8637dd04324f5~mv2_d_4032_3024_s_4_2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Empfangsbereich im Kupferton" loading="lazy"></button>
+          <button class="shot" data-full="https://static.wixstatic.com/media/68577c_ead6ba303bed484baa80c214d0c86e29~mv2_d_3024_4032_s_4_2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Empfangsinsel, naturbelassen und von innen warmweiss ausgeleuchtet."><img src="https://static.wixstatic.com/media/68577c_ead6ba303bed484baa80c214d0c86e29~mv2_d_3024_4032_s_4_2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Beleuchtete Empfangsinsel" loading="lazy"></button>
+          <button class="shot" data-full="https://static.wixstatic.com/media/68577c_31f2c3a576f141a1a56ef0c921d8db7c~mv2_d_3024_4032_s_4_2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Die clubinterne Lounge wurde vergrössert und in einem Set von Farbtönen gestrichen, die das dreidimensionale Raumgefühl verstärken."><img src="https://static.wixstatic.com/media/68577c_31f2c3a576f141a1a56ef0c921d8db7c~mv2_d_3024_4032_s_4_2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Clubinterne Lounge" loading="lazy"></button>
+          <button class="shot" data-full="https://static.wixstatic.com/media/68577c_0a1c274561d8416e9f34e5fb734f08f8~mv2_d_3024_4032_s_4_2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Die Damentoilette wurde komplett saniert und erstrahlt nun in angenehmen Petrol-, Grau- und Beigetönen. Eine der vier Kabinen wurde vergrössert und rollstuhlgerecht erweitert."><img src="https://static.wixstatic.com/media/68577c_0a1c274561d8416e9f34e5fb734f08f8~mv2_d_3024_4032_s_4_2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Sanierte Damentoilette in Petrol und Grau" loading="lazy"></button>
+          <button class="shot" data-full="https://static.wixstatic.com/media/68577c_17bce39ce6104d98bf60959e2d0d318f~mv2_d_3024_4032_s_4_2.jpeg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Reduziertes, schlichtes Design kombiniert mit naturbelassenen Materialien."><img src="https://static.wixstatic.com/media/68577c_17bce39ce6104d98bf60959e2d0d318f~mv2_d_3024_4032_s_4_2.jpeg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Detail der Aussenlounge" loading="lazy"></button>
+          <button class="shot land" data-full="https://static.wixstatic.com/media/68577c_1c52c63285ea4544a9c975ec0cc1fff4~mv2_d_4032_3024_s_4_2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Die Rückwand gewährt der Konversation die nötige Privatsphäre – optisch an das Design der Sitzbank angepasst."><img src="https://static.wixstatic.com/media/68577c_1c52c63285ea4544a9c975ec0cc1fff4~mv2_d_4032_3024_s_4_2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Sitzbank mit Rückwand" loading="lazy"></button>
+        </div>
+      </article>
+
+      <!-- Projekt: Bains & Douches -->
+      <article class="project" aria-labelledby="p4">
+        <header class="project-head">
+          <h3 id="p4" class="spaced">Bains &amp; Douches</h3>
+          <p class="place">Clubinstallation</p>
+          <p>Keine Idee ist zu fantasievoll. Ich baue auch kurzerhand ein Badezimmerthema in einen Club hinein.</p>
+          <p>An den Seiten und hinter dem DJ-Pult wurden Bildschirme verbaut, die ein System nach Wunsch mit Videos bespielt – passend zum Badezimmer: Unterwasserwelten.</p>
+        </header>
+        <div class="gallery">
+          <button class="shot wide" data-full="https://static.wixstatic.com/media/68577c_7074ac6fb5434599a58e1040c7d63db2~mv2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Keine Idee ist zu fantasievoll."><img src="https://static.wixstatic.com/media/68577c_7074ac6fb5434599a58e1040c7d63db2~mv2.jpg/v1/fit/w_1400,h_1400,q_80/file.jpg" alt="Bains & Douches, Gesamtansicht" loading="lazy"></button>
+          <button class="shot land" data-full="https://static.wixstatic.com/media/68577c_fbb8d124c7b44874abe1267f7310de69~mv2_d_4896_3264_s_4_2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Ein Badezimmerthema, kurzerhand in einen Club gebaut."><img src="https://static.wixstatic.com/media/68577c_fbb8d124c7b44874abe1267f7310de69~mv2_d_4896_3264_s_4_2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="Badezimmer-Installation im Club" loading="lazy"></button>
+          <button class="shot land" data-full="https://static.wixstatic.com/media/68577c_8ffdd8bd5e92467fa05986d5615bb850~mv2_d_3000_2250_s_2.jpg/v1/fit/w_2000,h_2000,q_85/file.jpg" data-caption="Bildschirme an den Seiten und hinter dem DJ-Pult, bespielt mit Unterwasserwelten."><img src="https://static.wixstatic.com/media/68577c_8ffdd8bd5e92467fa05986d5615bb850~mv2_d_3000_2250_s_2.jpg/v1/fit/w_900,h_1800,q_80/file.jpg" alt="DJ-Pult mit Bildschirmen" loading="lazy"></button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= AKTUELL ================= -->
+  <section id="aktuell" class="news" aria-labelledby="aktuell-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="aktuell-title">Aktuell</h2></div>
+      <article class="news-item" aria-labelledby="n1">
+        <img src="https://static.wixstatic.com/media/68577c_365d523d7ba344a898dc58e742e56082~mv2.jpg/v1/crop/x_100,y_0,w_1606,h_890/fill/w_1400,h_776,al_c,q_85/pergola.jpg" alt="3D-Visualisierung der Pergola auf einer Dachterrasse" loading="lazy">
+        <div>
+          <p class="tag">In Planung</p>
+          <h3 id="n1" class="spaced">Pergola</h3>
+          <p>Für eine Dachterrasse wurde eine Pergola entworfen, die im Sommer offen und im Winter geschlossen wird. So geniessen Sie im Sommer die frische Brise und im Winter den beheizten Raum. Kurzerhand wird eine ungenutzte Aussenfläche nutzbar für ein gemütliches Beisammensein.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= SHOP =================
+       Neue Produkte: einen <article class="product"> Block kopieren.
+       Mit Bezahl-Link (z. B. Stripe/PayPal): data-buy="https://..." am Button setzen
+       → Button wird automatisch zu «Jetzt kaufen». Ohne Link: Anfrage per Kontaktformular. -->
+  <section id="shop" aria-labelledby="shop-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="shop-title">Shop</h2>
+        <p>Jedes Stück wird für Sie gefertigt – in Ihren Massen, Materialien und Farben.</p>
+      </div>
+      <div class="products">
+        <article class="product">
+          <img src="https://static.wixstatic.com/media/68577c_41ceda1fb5bb474a8cf2d1b52b91c69f~mv2.jpg/v1/fit/w_900,h_900,q_80/file.jpg" alt="Lounge-Sitzbank aus Holz" loading="lazy">
+          <div class="product-body">
+            <h3>Lounge- & Sitzmöbel nach Mass</h3>
+            <p>Sitzbänke, Rückwände und Lounges für drinnen und draussen, aus naturbelassenen Materialien.</p>
+            <p class="price">Preis auf Anfrage</p>
+            <button class="btn btn-solid" data-product="Lounge- & Sitzmöbel nach Mass" data-buy="">Anfrage senden</button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="https://static.wixstatic.com/media/68577c_55717d926b1a4b81a8937bdbc1a9ca27~mv2.jpg/v1/fit/w_900,h_900,q_80/file.jpg" alt="Modulares Holzchalet" loading="lazy">
+          <div class="product-body">
+            <h3>Modulare Bauten</h3>
+            <p>Zerlegbare Chalets, Pergolen und Pavillons, die ungenutzte Aussenflächen nutzbar machen.</p>
+            <p class="price">Preis auf Anfrage</p>
+            <button class="btn btn-solid" data-product="Modulare Bauten" data-buy="">Anfrage senden</button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="https://static.wixstatic.com/media/68577c_365d523d7ba344a898dc58e742e56082~mv2.jpg/v1/crop/x_100,y_0,w_1606,h_890/fill/w_900,h_675,al_c,q_80/file.jpg" alt="3D-Visualisierung" loading="lazy">
+          <div class="product-body">
+            <h3>Planung, CAD & Visualisierung</h3>
+            <p>Von der Skizze zur 3D-Visualisierung und CAD-Zeichnung – als Grundlage für Ihr Projekt oder Ihren Bauantrag.</p>
+            <p class="price">Preis auf Anfrage</p>
+            <button class="btn btn-solid" data-product="Planung, CAD & Visualisierung" data-buy="">Anfrage senden</button>
+          </div>
+        </article>
+      </div>
+      <p class="shop-note">Alle Preise in CHF. Sie erhalten nach Ihrer Anfrage eine unverbindliche Offerte.</p>
+    </div>
+  </section>
+
+  <!-- ================= KONTAKT ================= -->
+  <section id="kontakt" class="contact" aria-labelledby="kontakt-title">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="kontakt-title">Let’s work together</h2>
+        <address>
+          Creyation – Rey Gafner<br>
+          Stifelacher 3<br>
+          8132 Hinteregg<br>
+          <a href="mailto:rey@creyation.ch">rey@creyation.ch</a>
+        </address>
+        <ul class="social">
+          <li><a href="https://www.instagram.com/creyationgafner" rel="noopener" target="_blank">Instagram</a></li>
+          <li><a href="https://www.facebook.com/creyation" rel="noopener" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+      <!-- Formular öffnet das E-Mail-Programm (funktioniert ohne Server).
+           Für direkten Versand: siehe Handoff, Abschnitt «Kontaktformular». -->
+      <form id="contact-form" novalidate>
+        <div class="field"><label for="f-vorname">Vorname</label><input id="f-vorname" name="vorname" autocomplete="given-name" required></div>
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="family-name" required></div>
+        <div class="field full"><label for="f-email">E-Mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="f-msg">Nachricht</label><textarea id="f-msg" name="nachricht" required></textarea></div>
+        <div class="field full"><button class="btn btn-solid" type="submit">Nachricht senden</button></div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <h2>Creyation</h2>
+      <p>Realizing dreams since 1991.<br>© 2019–<span id="year">2026</span> Creyation</p>
+    </div>
+    <div>
+      <h2>Impressum</h2>
+      <p>Creyation, Rey Gafner<br>Stifelacher 3, 8132 Hinteregg<br><a href="mailto:rey@creyation.ch">rey@creyation.ch</a></p>
+    </div>
+    <div>
+      <h2>Folgen</h2>
+      <p><a href="https://www.instagram.com/creyationgafner" rel="noopener" target="_blank">Instagram</a><br><a href="https://www.facebook.com/creyation" rel="noopener" target="_blank">Facebook</a></p>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lightbox" aria-label="Bildansicht">
+  <div class="lb-inner">
+    <img alt="">
+    <p class="lb-caption"></p>
+  </div>
+  <button class="lb-btn lb-close" type="button">Schliessen</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="Vorheriges Bild">‹</button>
+  <button class="lb-btn lb-next" type="button" aria-label="Nächstes Bild">›</button>
+</dialog>
+
+<script>
+(function () {
+  // Jahr im Footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile Navigation
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.textContent = open ? 'Schliessen' : 'Menü';
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', false); toggle.textContent = 'Menü'; }
+  });
+
+  // Lightbox (blättert innerhalb eines Projekts)
+  var dlg = document.querySelector('dialog.lightbox');
+  var lbImg = dlg.querySelector('img');
+  var lbCap = dlg.querySelector('.lb-caption');
+  var group = [], idx = 0;
+  function show(i) {
+    idx = (i + group.length) % group.length;
+    var b = group[idx];
+    lbImg.src = b.dataset.full;
+    lbImg.alt = b.querySelector('img').alt;
+    lbCap.textContent = b.dataset.caption || '';
+  }
+  document.querySelectorAll('.shot').forEach(function (b) {
+    b.addEventListener('click', function () {
+      group = Array.prototype.slice.call(b.closest('.gallery').querySelectorAll('.shot'));
+      show(group.indexOf(b));
+      if (dlg.showModal) dlg.showModal(); else window.open(b.dataset.full, '_blank');
+    });
+  });
+  dlg.querySelector('.lb-close').addEventListener('click', function () { dlg.close(); });
+  dlg.querySelector('.lb-prev').addEventListener('click', function () { show(idx - 1); });
+  dlg.querySelector('.lb-next').addEventListener('click', function () { show(idx + 1); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target.classList.contains('lb-inner')) dlg.close(); });
+  dlg.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+
+  // Shop-Buttons: Bezahl-Link oder Anfrage
+  var msg = document.getElementById('f-msg');
+  document.querySelectorAll('[data-product]').forEach(function (b) {
+    if (b.dataset.buy) b.textContent = 'Jetzt kaufen';
+    b.addEventListener('click', function () {
+      if (b.dataset.buy) { window.open(b.dataset.buy, '_blank', 'noopener'); return; }
+      msg.value = 'Guten Tag Herr Gafner\n\nIch interessiere mich für: ' + b.dataset.product + '\n\n';
+      document.getElementById('kontakt').scrollIntoView();
+      setTimeout(function () { document.getElementById('f-vorname').focus({ preventScroll: true }); }, 400);
+    });
+  });
+
+  // Kontaktformular → E-Mail-Programm
+  var form = document.getElementById('contact-form');
+  var status = form.querySelector('.form-status');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = new FormData(form);
+    var missing = ['vorname', 'name', 'email', 'nachricht'].filter(function (k) { return !String(d.get(k) || '').trim(); });
+    if (missing.length) { status.textContent = 'Bitte füllen Sie alle Felder aus.'; return; }
+    if (!form.email.checkValidity()) { status.textContent = 'Bitte prüfen Sie die E-Mail-Adresse.'; form.email.focus(); return; }
+    var subject = 'Anfrage über creyation.ch – ' + d.get('vorname') + ' ' + d.get('name');
+    var body = d.get('nachricht') + '\n\n—\n' + d.get('vorname') + ' ' + d.get('name') + '\n' + d.get('email');
+    window.location.href = 'mailto:rey@creyation.ch?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    status.textContent = 'Ihr E-Mail-Programm wurde geöffnet. Senden Sie die Nachricht dort ab.';
+  });
+})();
+</script>
+</body>
+</html>
