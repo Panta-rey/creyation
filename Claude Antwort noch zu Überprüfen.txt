@@ -1,0 +1,12 @@
+Danach prüfen
+
+Nach ein paar Stunden in PowerShell:
+
+powershell
+Resolve-DnsName creyation.ch -Type NS
+Resolve-DnsName creyation.ch -Type A
+Resolve-DnsName creyation.ch -Type MX
+
+Erscheinen beim ersten Befehl ns1.cyon.ch und ns2.cyon.ch und beim zweiten die vier 185.199.1xx.153, ist die Umstellung durch. Beim dritten müssen weiterhin die Google-Server stehen. Schick dir zur Sicherheit auch eine Test-Mail von einer anderen Adresse an rey@creyation.ch.
+
+Dann auf GitHub unter Settings → Pages prüfen, ob die DNS-Prüfung grün ist, und «Enforce HTTPS» aktivieren.
