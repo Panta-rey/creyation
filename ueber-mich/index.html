@@ -1,0 +1,48 @@
+---
+layout: standard
+titel: Über mich
+kurz: "Rey Gafner, Biologe und Allrounder: Spezialanfertigungen, Installationen und eigene Produkte aus der Werkstatt in Hinteregg ZH."
+---
+{% comment %} Texte und Bilder dieser Seite stehen in _data/ueber_mich.yml {% endcomment %}
+{% assign u = site.data.ueber_mich %}
+<div class="wrap" id="inhalt">
+  <section class="ueber-kopf">
+    <figure><img src="{{ '/assets/bilder/' | append: u.kopf.bild | relative_url }}" alt="{{ u.kopf.bild_beschrieb | escape }}"></figure>
+    <div>
+      <h1>{{ u.kopf.titel }}</h1>
+      <p class="lead">{{ u.kopf.einstieg }}</p>
+      {% for a in u.kopf.absaetze %}<p>{{ a }}</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="karte-geschichte" aria-labelledby="karte-t">
+    <h2 id="karte-t">{{ u.visitenkarte.titel }}</h2>
+    <div class="zweispaltig">
+      <div>
+        {% for a in u.visitenkarte.absaetze %}<p>{{ a }}</p>
+        {% endfor %}
+      </div>
+      <img class="faltmuster" src="{{ '/assets/bilder/' | append: u.visitenkarte.bild_muster | relative_url }}" alt="{{ u.visitenkarte.bild_muster_beschrieb | escape }}">
+    </div>
+    <img class="breit" src="{{ '/assets/bilder/' | append: u.visitenkarte.bild_breit | relative_url }}" alt="{{ u.visitenkarte.bild_breit_beschrieb | escape }}" loading="lazy">
+  </section>
+
+  <section class="zweispaltig werkstatt" aria-labelledby="werk-t">
+    <img src="{{ '/assets/bilder/' | append: u.werkstatt.bild | relative_url }}" alt="{{ u.werkstatt.bild_beschrieb | escape }}" loading="lazy">
+    <div>
+      <h2 id="werk-t">{{ u.werkstatt.titel }}</h2>
+      {% for a in u.werkstatt.absaetze %}<p>{{ a }}</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="handschrift" aria-labelledby="hand-t">
+    <h2 id="hand-t">{{ u.handschrift_titel }}</h2>
+    <ul>
+      {% for h in u.handschrift %}<li><strong>{{ h.stark }}</strong> {{ h.text }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
+<section class="aufruf"><div class="wrap"><h2>{{ u.schluss.titel }}</h2><a class="btn" href="{{ '/kontakt/' | relative_url }}">{{ u.schluss.knopf }}</a></div></section>

@@ -1,0 +1,43 @@
+---
+layout: standard
+titel: Eigene Produkte
+kurz: "Eigene Produkte von Creyation Gafner für Zuhause, Haustiere und Werkstatt, in der Schweiz auf Bestellung gefertigt."
+---
+{% assign produkte = site.pages | where_exp: "p", "p.url contains '/produkte/'" | where_exp: "p", "p.name == 'index.md'" | sort: "reihenfolge" %}
+<div class="wrap" id="inhalt">
+  <header class="seitenkopf">
+    <h1>Eigene Produkte</h1>
+    <p class="lead">Entwickelt aus eigener Neugier, gefertigt auf Bestellung in meiner Werkstatt in Hinteregg. Preis und Lieferzeit auf Anfrage.</p>
+  </header>
+  {% assign linien = "Home,Haustiere,Werkstatt" | split: "," %}
+  {% for linie in linien %}
+  {% assign liste = produkte | where_exp: "p", "p.linie == linie" %}
+  {% if liste.size > 0 %}
+  <section class="produktlinie" aria-labelledby="linie-{{ linie | slugify }}">
+    <h2 id="linie-{{ linie | slugify }}">{{ linie }}</h2>
+    <div class="karten">
+      {% for p in liste %}
+      {% assign kandidaten = site.static_files | where_exp: "f", "f.path contains p.dir" | sort: "name" %}{% capture bildliste_txt %}{% for f in kandidaten %}{% assign ext = f.extname | downcase %}{% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' %}{{ f.path }}|{% endif %}{% endfor %}{% endcapture %}{% assign bilder = bildliste_txt | split: '|' %}
+      {% if p.titelbild %}{% capture bildpfad %}{{ p.dir }}{{ p.titelbild }}{% endcapture %}{% else %}{% assign bildpfad = bilder.first %}{% endif %}
+      {% assign pid = p.dir | split: '/' | last %}
+      {% if p.seite %}{% assign ziel = p.seite %}{% else %}{% assign ziel = p.url %}{% endif %}
+      <article class="produktkarte" id="{{ pid }}">
+        <a href="{{ ziel | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ bildpfad | relative_url }}" alt="{{ p.titel }}" loading="lazy" data-produktbild></a>
+        {% if bilder.size > 1 %}<div class="vorschau" role="group" aria-label="Weitere Bilder">
+          {% for b in bilder %}<button type="button" data-bild="{{ b | relative_url }}" aria-pressed="{% if b == bildpfad %}true{% else %}false{% endif %}"><img src="{{ b | relative_url }}" alt="{{ p.titel }}, Bild {{ forloop.index }}" loading="lazy"></button>{% endfor %}
+        </div>{% endif %}
+        <h3><a href="{{ ziel | relative_url }}">{{ p.titel }}</a></h3>
+        {% if p.masse %}<p class="meta">{{ p.masse }} cm (L × B × H)</p>{% endif %}
+        <p>{{ p.kurz }}</p>
+        {% if p.farben %}<div class="farben" role="group" aria-label="Farbe wählen">
+          {% for f in p.farben %}<button type="button" class="farbe" style="--f:{{ f.hex }}" data-bild="{{ p.dir | append: f.bild | relative_url }}" data-name="{{ f.name }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" title="{{ f.name }}"><span class="sr-only">{{ f.name }}</span></button>{% endfor %}
+          <span class="farbname">{{ p.farben.first.name }}</span>
+        </div>{% endif %}
+        {% if p.seite %}<a class="btn btn-voll" href="{{ p.seite | relative_url }}">Stoff und Holz wählen</a>{% else %}<a class="btn" href="{{ '/kontakt/' | relative_url }}?produkt={{ p.titel | uri_escape }}" data-produkt="{{ p.titel }}">Anfrage senden</a>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  {% endfor %}
+</div>

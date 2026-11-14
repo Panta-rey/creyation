@@ -1,1 +1,6 @@
+_site/
+.jekyll-cache/
+
+# Interne Arbeitsdokumente: bleiben lokal, nie ins Repository
 HANDOFF.md
+Prompt.docx

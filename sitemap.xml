@@ -1,0 +1,7 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% assign seiten = site.pages | sort: "url" %}{% for p in seiten %}{% assign ende = p.url | slice: -1 %}{% if ende == '/' %}  <url><loc>{{ p.url | absolute_url }}</loc></url>
+{% endif %}{% endfor %}</urlset>

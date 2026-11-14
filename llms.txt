@@ -1,0 +1,45 @@
+---
+layout: null
+---
+# Creyation Gafner
+
+> {{ site.description }}
+
+Creyation Gafner ist das Einzelunternehmen von Rey Gafner (MSc UZH, Biologe), selbstständig seit 2017. Rey Gafner entwickelt und baut Lösungen und Produkte, die es so noch nicht gibt: von der ersten Skizze über CAD, CNC-Fräse und 3D-Drucker bis zum fertigen Objekt, vom Ersatzteil in Handgrösse bis zur 4,5 Meter hohen Skulptur. Leitsatz: «Have a seat – dream – we talk – I build».
+
+- Werkstatt: Stifelacher 3, 8132 Hinteregg (Kanton Zürich, Schweiz)
+- Büro: Dörflistrasse 1C, 8903 Birmensdorf (Kanton Zürich, Schweiz)
+- Kontakt: rey@creyation.ch, Kontaktformular: {{ '/kontakt/' | absolute_url }}
+- Instagram: https://www.instagram.com/creyationgafner und https://www.instagram.com/casadelpaw
+- Sprache der Website: Deutsch (Schweiz)
+
+## Leistungen
+
+- Umsetzung für Innenarchitektur: Das Innenarchitektur- oder Planungsbüro plant, Creyation Gafner baut die Spezialanfertigungen, die es so nicht zu kaufen gibt, massgenau und vorab in 3D visualisiert.
+- Inszenierung für Marken und Events: Skulpturen, Bühnenbilder, Centerpieces, Markenauftritte und temporäre Bauten, oft mit Licht als Teil der Idee.
+- Eigene Produkte für Zuhause, Haustiere und Werkstatt, in der Schweiz auf Bestellung gefertigt. Preis und Lieferzeit auf Anfrage.
+- Camperausbau: vermessen, in 3D planen, CNC-fräsen, einbauen; für Ausbaubetriebe und Private.
+- Werkstatt: CNC-Fräse mit Arbeitsbereich 2800 × 1500 × 200 mm (Holz, Kunststoff, Aluminium), 3D-Druck, Möbelbau, Planung in SketchUp und Fusion 360. Was ausserhalb der eigenen Werkstatt liegt, übernehmen Partnerbetriebe; die Koordination bleibt bei Rey Gafner.
+
+## Seiten
+
+- [Start]({{ '/' | absolute_url }})
+- [Projekte]({{ '/projekte/' | absolute_url }})
+- [Eigene Produkte]({{ '/produkte/' | absolute_url }})
+- [Casa del Paw, Katzensofa]({{ '/produkte/casa-del-paw/' | absolute_url }})
+- [Über mich]({{ '/ueber-mich/' | absolute_url }})
+- [Kontakt]({{ '/kontakt/' | absolute_url }})
+- [Impressum]({{ '/impressum/' | absolute_url }})
+
+## Projekte
+{% assign alle = site.pages | where_exp: "p", "p.url contains '/projekte/'" | where_exp: "p", "p.name == 'index.md'" | sort: "jahr" | reverse %}
+{% for p in alle %}- [{{ p.titel }}]({{ p.url | absolute_url }}): {{ p.kurz }} ({{ p.ort }}{% if p.jahr %}, {{ p.jahr }}{% endif %}; {{ p.kategorie | join: ", " }})
+{% endfor %}
+## Eigene Produkte
+{% assign produkte = site.pages | where_exp: "p", "p.url contains '/produkte/'" | where_exp: "p", "p.name == 'index.md'" | sort: "reihenfolge" %}
+{% for p in produkte %}- [{{ p.titel }}]({{ p.url | absolute_url }}) (Linie {{ p.linie }}{% if p.masse %}, {{ p.masse }} cm{% endif %}): {{ p.kurz }}
+{% endfor %}
+
+## Für und mit wem gearbeitet wurde
+
+{{ site.data.kunden | join: ", " }}.

@@ -1,0 +1,48 @@
+# ============================================================
+# CASA DEL PAW: KATZENSOFA MIT STOFF- UND HOLZWAHL
+# ============================================================
+# FOTOS: Jede Kombination ist ein Foto im Ordner assets/bilder/casadelpaw/
+# mit dem Namen  stoff-holz.jpg , z. B.  haifa-cognac.jpg  (Kurznamen wie unten bei id:).
+# Foto in den Ordner legen = Kombination ist wählbar. Foto löschen = nicht mehr wählbar.
+# Hier muss dafür nichts eingetragen werden.
+#
+# NEUER STOFF: unten bei stoffe: eine Zeile ergänzen (id klein, ohne Leerzeichen und Umlaute;
+# name wie er angezeigt wird; hex = Farbton des runden Knopfs) und mindestens ein Foto
+# id-natur.jpg, id-cognac.jpg oder id-chocolat.jpg in den Ordner legen.
+#
+# «HAPPY CLIENTS»: alle Bilder im selben Ordner, deren Name mit  happy-  beginnt.
+
+titel: "Ein Sofa für das bequemste Nickerchen"
+einstieg: "Das Katzensofa von Casa del Paw: Rahmen aus Holz, Füsse als Katzenpfoten aus dem 3D-Drucker, Polster in sieben Stoffen. Entworfen und von Hand gefertigt in der Schweiz."
+masse: "40 × 83 × 42 cm (L × B × H). Preis und Lieferzeit auf Anfrage."
+wahl_titel: "Ihr Sofa zusammenstellen"
+hinweis: "Wählbar sind die Kombinationen, die es als Foto gibt. Blasse Stoffe sind im gewählten Holzton noch nicht fotografiert; weitere Kombinationen auf Anfrage."
+
+# Welche Kombination beim Öffnen der Seite gezeigt wird
+start_stoff: haifa
+start_holz: natur
+
+stoffe:
+  - { id: bilbao, name: "Bilbao", hex: "#745E2C" }
+  - { id: haifa, name: "Haifa", hex: "#3B3C15" }
+  - { id: palm-beach, name: "Palm Beach", hex: "#67869C" }
+  - { id: roebuck, name: "Roebuck", hex: "#953E09" }
+  - { id: st-tropez, name: "St Tropez", hex: "#A95D3C" }
+  - { id: kas, name: "Kas", hex: "#887A50" }
+  - { id: nikitas, name: "Nikitas", hex: "#A1726E" }
+
+# bild = Nahaufnahme des Holztons, liegt ebenfalls in assets/bilder/casadelpaw/
+holz:
+  - { id: natur, name: "Natur", hex: "#E3CFA0", bild: holz-natur.jpg }
+  - { id: cognac, name: "Cognac", hex: "#A8662F", bild: holz-cognac.jpg }
+  - { id: chocolat, name: "Chocolat", hex: "#5A3D2B", bild: holz-chocolat.jpg }
+
+vitruvius:
+  titel: "Jedes Sofa braucht einen Beistelltisch"
+  text: "Vitruvius verbindet den Grundriss einer Katzenpfote mit einer dorischen Säule. Darauf findet das Katzengras seinen Platz."
+  link_text: "Zu Vitruvius"
+  bild: mit-vitruvius.jpg
+  bild_beschrieb: "Katzensofa mit dem rosa Beistelltisch Vitruvius und Katzengras"
+
+happy_titel: "Happy Clients"
+happy_bild_beschrieb: "Zufriedene Katze auf ihrem Casa-del-Paw-Sofa"

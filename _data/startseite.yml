@@ -1,0 +1,123 @@
+# ============================================================
+# TEXTE UND BILDER DER STARTSEITE
+# ============================================================
+# So bearbeiten:
+# - Nur den Text zwischen den Anführungszeichen "..." ändern.
+# - Die Wörter vor dem Doppelpunkt (titel:, text:, bild: ...) und die Einrückung nicht ändern.
+# - Im Text keine geraden Anführungszeichen " verwenden, sondern « ».
+# - Bilder: Dateiname ab dem Ordner assets/bilder/ (z. B. start/kolibri.jpg).
+#   Neues Bild in den Ordner assets/bilder/start/ legen und hier den Namen eintragen.
+# - bild_beschrieb: ein Satz, der das Bild beschreibt (für Google und für Blinde).
+# - Die sechs «Ausgewählten Projekte» stehen nicht hier: Sie werden in den Projekten
+#   mit startseite: 1 bis 6 gewählt.
+
+kern:
+  titel: "Ich baue, was es noch nicht gibt."
+  text: "Spezialanfertigungen für Innenarchitektur, Inszenierungen für Marken und Events, eigene Produkte. Von der ersten Skizze über CAD, CNC-Fräse und 3D-Drucker bis zum fertigen Objekt, vom Ersatzteil in Handgrösse bis zur 4,5 Meter hohen Skulptur."
+  zitat: "Ihre Idee darf verrückt sein. Ich finde den Weg, sie zu bauen."
+  knopf_1: "Projekt besprechen"
+  knopf_2: "Projekte ansehen"
+  bild: start/faltstuhl.jpg
+  bild_beschrieb: "Die Visitenkarte von Creyation Gafner, ohne Schnitt zu einem kleinen Stuhl gefaltet"
+  bildlegende: "Meine Visitenkarte, ohne Schnitt zum Stuhl gefaltet."
+
+standbeine_titel: "Wofür Sie mich holen"
+standbeine:
+  - titel: "Umsetzung für Innenarchitektur"
+    text: "Sie planen, ich baue die Teile, die es so nicht zu kaufen gibt: massgenau, vorab in 3D visualisiert, mit koordinierten Partnern."
+    bild: start/mybikeplan.jpg
+    bild_beschrieb: "Mybikeplan-Store in Zürich: gelbe Möbel und eine Lichtwand hinter Polycarbonat"
+    link_text: "Referenzen Innenarchitektur"
+    link: "/projekte/?k=raumgestaltung"
+  - titel: "Inszenierung für Marken und Events"
+    text: "Skulpturen, Bühnenbilder und Centerpieces, vor denen Menschen stehen bleiben. Oft mit Licht als Teil der Idee."
+    bild: start/kolibri.jpg
+    bild_beschrieb: "Die 4,5 Meter hohe Kolibri-Skulptur am Terrazzza Festival"
+    link_text: "Referenzen Inszenierung"
+    link: "/projekte/?k=inszenierung-events"
+  - titel: "Eigene Produkte"
+    text: "Möbel und Objekte für Zuhause, Haustiere und Werkstatt. Aus eigener Neugier entwickelt, auf Bestellung gefertigt."
+    bild: start/katzensofa.jpg
+    bild_beschrieb: "Schwarze Katze schläft auf dem Katzensofa von Casa del Paw"
+    link_text: "Produkte ansehen"
+    link: "/produkte/"
+  - titel: "Camperausbau"
+    text: "Vermessen, in 3D planen, CNC-fräsen, einbauen: Möbel, Halterungen und Lösungen für Vans, für Ausbaubetriebe und Private."
+    bild: start/camper.jpg
+    bild_beschrieb: "Ausgebauter VW T4 mit Arvendecke, Bettbank und Holzmöbeln"
+    link_text: "Referenzen Camperbau"
+    link: "/projekte/?k=camperausbau"
+
+projekte:
+  titel: "Ausgewählte Projekte"
+  text: "Eine Auswahl meiner Arbeiten seit 2017."
+  knopf: "Alle Projekte"
+
+fragen_titel: "Frage und Lösung"
+fragen_text: "Viele meiner Arbeiten beginnen mit einem Problem, für das es nichts Passendes gibt."
+fragen:
+  - frage: "Ein Spuckschutz, der nicht umfällt?"
+    antwort: "Er greift sich selbst an die Theke. Keine Schrauben, kein Kleber, keine Chance umzukippen."
+    bild: start/spuckschutz.jpg
+    bild_beschrieb: "Detail: Der Spuckschutz greift mit einer geschwungenen Holzklammer um die Thekenkante"
+  - frage: "Ein Katzenhaus lüften, ohne dass es im Winter auskühlt?"
+    antwort: "Mit einem selbst entwickelten Wärmetauscher: Die warme Abluft wärmt die kalte Frischluft vor. Dazu Luftqualitätsmessung, beheiztes Bett und Kamera."
+    bild: start/katzenhaus.jpg
+    bild_beschrieb: "Offenes Katzenhaus mit Bett, Futterautomat und Sensoren, daneben eine schwarze Katze"
+  - frage: "Eine Visitenkarte, die «Have a seat» sagt?"
+    antwort: "Sie lässt sich ohne einen einzigen Schnitt zu einem Stuhl falten. Aus diesem Stuhl ist später mein Logo entstanden."
+    bild: start/faltprozess.jpg
+    bild_beschrieb: "Von links: Handskizze des Faltmusters, die gedruckte Karte und der daraus gefaltete Stuhl"
+    breit: true
+
+ablauf_titel: "So arbeiten wir zusammen"
+ablauf:
+  - titel: "Have a seat"
+    text: "Wir setzen uns hin. Sie erzählen, was Sie vorhaben, oder was bisher nicht funktioniert."
+  - titel: "dream"
+    text: "Ich entwickle die Idee weiter und visualisiere sie in 3D. Sie sehen, was entsteht, bevor es entsteht."
+  - titel: "we talk"
+    text: "Wir schärfen das Konzept gemeinsam. Sie erhalten eine klare Offerte, Schritt für Schritt erklärt."
+  - titel: "I build"
+    text: "Ich baue in meiner Werkstatt in Hinteregg und koordiniere spezialisierte Partner, bis alles steht."
+
+produkte:
+  titel: "Eigene Produkte"
+  text: "Für Zuhause, für Haustiere und für die Werkstatt."
+  knopf: "Alle Produkte"
+  hinweis: "Alle Produkte werden in der Schweiz auf Bestellung gefertigt."
+  kacheln:
+    - titel: "MOTU TANE"
+      text: "Couchtisch aus lackiertem Holz, in verschiedenen Farben."
+      bild: start/motutane.jpg
+      bild_beschrieb: "MOTU TANE: runder Couchtisch in Crème mit zwei geschwungenen Wangen"
+      link: "/produkte/motu-tane/"
+    - titel: "XIPE"
+      text: "LED-Gewächshaus für Setzlinge, gesteckt und erweiterbar."
+      bild: start/xipe.jpg
+      bild_beschrieb: "XIPE: LED-Anzuchtregal aus Holz in Hausform voller Setzlinge"
+      link: "/produkte/xipe-3/"
+    - titel: "Casa del Paw"
+      text: "Katzensofa in sieben Stoffen und drei Holztönen."
+      bild: start/casadelpaw.jpg
+      bild_beschrieb: "Katzensofa von Casa del Paw mit olivgrünem Bezug, daneben der rosa Beistelltisch Vitruvius"
+      link: "/produkte/casa-del-paw/"
+    - titel: "Die ätherische Toilette"
+      text: "Duft für die Autolüftung, mit ätherischem Öl befüllbar."
+      bild: start/toilette.jpg
+      bild_beschrieb: "Die ätherische Toilette: goldene Mini-Toilette mit blauer Filzeinlage"
+      link: "/produkte/aetherische-toilette/"
+
+ueber:
+  titel: "Rey Gafner"
+  einstieg: "Ich bin Biologe (MSc UZH) und denke am liebsten mit den Händen."
+  absaetze:
+    - "Seit 2017 baue ich als Allrounder, was es so noch nicht gibt: mit CNC-Fräse, 3D-Drucker und Freude an Lösungen, die zuerst niemand für möglich hält. Viele meiner Objekte werden aus flachen Teilen gesteckt statt geschraubt, leicht, zerlegbar und erweiterbar."
+    - "Was ich nicht selbst mache, übernehmen erfahrene Partnerbetriebe. Die Fäden bleiben bei mir."
+  link_text: "Mehr über mich"
+  bild: start/cnc.jpg
+  bild_beschrieb: "CNC-Fräse bei der Arbeit: aus einer Holzplatte werden Einzelteile gefräst"
+  bildlegende: "Aus der Fläche in den Raum: Plattenteile frisch ab der CNC-Fräse."
+
+kunden_titel: "Ich durfte arbeiten für und mit"
+# Die Namen selbst stehen in der Datei kunden.yml.

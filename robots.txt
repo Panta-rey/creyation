@@ -1,0 +1,8 @@
+---
+layout: null
+---
+# Creyation Gafner: alle Suchmaschinen und KI-Dienste dürfen die Seite lesen.
+User-agent: *
+{% if site.vorschau %}Disallow: /{% else %}Allow: /{% endif %}
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

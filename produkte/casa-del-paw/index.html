@@ -1,0 +1,61 @@
+---
+layout: standard
+titel: Casa del Paw
+kurz: "Casa del Paw: das Katzensofa von Creyation Gafner, in sieben Stoffen und drei Holztönen, in der Schweiz von Hand gefertigt."
+---
+{% comment %} Texte, Stoffe und Holztöne stehen in _data/katzensofa.yml; die Fotos der Kombinationen liegen als stoff-holz.jpg in assets/bilder/casadelpaw/ {% endcomment %}
+{% assign cdp = site.data.katzensofa %}
+{% assign cdp_dateien = site.static_files | where_exp: "f", "f.path contains '/assets/bilder/casadelpaw/'" | sort: "name" %}
+{% capture kombis %}{% for st in cdp.stoffe %}{% for hz in cdp.holz %}{% capture datei %}{{ st.id }}-{{ hz.id }}.jpg{% endcapture %}{% for f in cdp_dateien %}{% if f.name == datei %}"{{ st.id }}|{{ hz.id }}":"{{ datei }}",{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endcapture %}
+{% for st in cdp.stoffe %}{% if st.id == cdp.start_stoff %}{% assign start_stoff_name = st.name %}{% endif %}{% endfor %}
+{% for hz in cdp.holz %}{% if hz.id == cdp.start_holz %}{% assign start_holz_name = hz.name %}{% assign start_holz_bild = hz.bild %}{% endif %}{% endfor %}
+<div class="wrap" id="inhalt">
+  <a class="zurueck" href="{{ '/produkte/' | relative_url }}" style="margin-top:clamp(2rem,5vw,4rem)">Alle Produkte</a>
+  <header class="cdp-kopf">
+    <img src="{{ '/assets/bilder/casadelpaw/casa-del-paw-logo.png' | relative_url }}" alt="Casa del Paw" width="320">
+    <div>
+      <h1>{{ cdp.titel }}</h1>
+      <p class="lead">{{ cdp.einstieg }}</p>
+      <p class="meta">{{ cdp.masse }}</p>
+    </div>
+  </header>
+
+  <section class="konfigurator" aria-labelledby="konf-t">
+    <figure class="konf-bild">
+      <img id="konf-foto" src="{{ '/assets/bilder/casadelpaw/' | append: cdp.start_stoff | append: '-' | append: cdp.start_holz | append: '.jpg' | relative_url }}" alt="Katzensofa, Stoff {{ start_stoff_name }}, Holz {{ start_holz_name }}">
+      <figcaption id="konf-legende" class="meta">{{ start_stoff_name }}, Holz {{ start_holz_name }}</figcaption>
+    </figure>
+    <div class="konf-wahl">
+      <h2 id="konf-t">{{ cdp.wahl_titel }}</h2>
+      <fieldset>
+        <legend>Stoff <span id="stoff-name">{{ start_stoff_name }}</span></legend>
+        <div class="muster">{% for st in cdp.stoffe %}<button type="button" class="farbe" style="--f:{{ st.hex }}" data-stoff="{{ st.id }}" data-name="{{ st.name }}" aria-pressed="{% if st.id == cdp.start_stoff %}true{% else %}false{% endif %}" title="{{ st.name }}"><span class="sr-only">{{ st.name }}</span></button>{% endfor %}</div>
+      </fieldset>
+      <fieldset>
+        <legend>Holz <span id="holz-name">{{ start_holz_name }}</span></legend>
+        <div class="muster">{% for hz in cdp.holz %}<button type="button" class="farbe" style="--f:{{ hz.hex }}" data-holz="{{ hz.id }}" data-name="{{ hz.name }}" aria-pressed="{% if hz.id == cdp.start_holz %}true{% else %}false{% endif %}" title="{{ hz.name }}"><span class="sr-only">{{ hz.name }}</span></button>{% endfor %}</div>
+      </fieldset>
+      <p class="meta" style="margin:-.4rem 0 1.4rem">{{ cdp.hinweis }}</p>
+      <figure class="holzmuster"><img id="holz-foto" src="{{ '/assets/bilder/casadelpaw/' | append: start_holz_bild | relative_url }}" alt="Holzton {{ start_holz_name }} im Detail"><figcaption class="meta" id="holz-hinweis">Holzton im Detail</figcaption></figure>
+      <a class="btn btn-voll" id="konf-anfrage" href="{{ '/kontakt/' | relative_url }}?produkt={{ 'Casa del Paw Katzensofa' | uri_escape }}">Anfrage senden</a>
+    </div>
+  </section>
+  <script type="application/json" id="konf-daten">{"basis": "{{ '/assets/bilder/casadelpaw/' | relative_url }}", "kontakt": "{{ '/kontakt/' | relative_url }}", "daten": {"start": {"stoff": "{{ cdp.start_stoff }}", "holz": "{{ cdp.start_holz }}"}, "stoffe": {{ cdp.stoffe | jsonify }}, "holz": {{ cdp.holz | jsonify }}, "kombis": { {{ kombis }}"_": "" }}}</script>
+
+  <section class="cdp-zusatz">
+    <div>
+      <h2>{{ cdp.vitruvius.titel }}</h2>
+      <p>{{ cdp.vitruvius.text }}</p>
+      <a class="textlink" href="{{ '/produkte/vitruvius/' | relative_url }}">{{ cdp.vitruvius.link_text }}</a>
+    </div>
+    <img src="{{ '/assets/bilder/casadelpaw/' | append: cdp.vitruvius.bild | relative_url }}" alt="{{ cdp.vitruvius.bild_beschrieb | escape }}" loading="lazy">
+  </section>
+
+  <section class="happy" aria-labelledby="happy-t">
+    <h2 id="happy-t">{{ cdp.happy_titel }}</h2>
+    <div class="happy-raster">
+      {% for f in cdp_dateien %}{% assign anfang = f.name | slice: 0, 6 %}{% if anfang == 'happy-' %}<img src="{{ f.path | relative_url }}" alt="{{ cdp.happy_bild_beschrieb | escape }}" loading="lazy">{% endif %}{% endfor %}
+    </div>
+    <p class="meta">Mehr auf Instagram: <a href="https://www.instagram.com/casadelpaw" rel="noopener" target="_blank">@casadelpaw</a></p>
+  </section>
+</div>

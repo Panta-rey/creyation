@@ -1,0 +1,74 @@
+{% comment %} Angaben für Suchmaschinen, Vorschaukarten (Teilen) und KI-Dienste {% endcomment %}
+{% assign seo_bild = site.teilen_bild %}
+{% assign seo_art = '' %}{% if page.layout == 'projekt' %}{% assign seo_art = 'projekt' %}{% endif %}{% if page.layout == 'produkt' %}{% assign seo_art = 'produkt' %}{% endif %}
+{% if seo_art != '' %}{% assign seo_kand = site.static_files | where_exp: "f", "f.path contains page.dir" | sort: "name" %}{% capture seo_txt %}{% for f in seo_kand %}{% assign ext = f.extname | downcase %}{% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' %}{{ f.path }}|{% endif %}{% endfor %}{% endcapture %}{% assign seo_liste = seo_txt | split: '|' %}{% if page.vorschaubild %}{% capture seo_bild %}{{ page.dir }}{{ page.vorschaubild }}{% endcapture %}{% elsif page.titelbild %}{% capture seo_bild %}{{ page.dir }}{{ page.titelbild }}{% endcapture %}{% elsif seo_liste.first %}{% assign seo_bild = seo_liste.first %}{% endif %}{% endif %}
+{% capture seo_titel %}{% if page.titel %}{{ page.titel }} – {{ site.title }}{% else %}{{ site.start_titel }}{% endif %}{% endcapture %}
+{% assign seo_text = page.kurz | default: site.description %}
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:locale" content="de_CH">
+<meta property="og:type" content="{% if page.layout == 'projekt' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ seo_titel | escape }}">
+<meta property="og:description" content="{{ seo_text | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ seo_bild | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+{% if site.google_site_verification and site.google_site_verification != '' %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "{{ '/' | absolute_url }}#firma",
+  "name": "Creyation Gafner",
+  "alternateName": "Creyation",
+  "url": "{{ '/' | absolute_url }}",
+  "logo": "{{ '/assets/bilder/logo-weiss-auf-schwarz.svg' | absolute_url }}",
+  "image": "{{ site.teilen_bild | absolute_url }}",
+  "description": {{ site.description | jsonify }},
+  "slogan": "Have a seat – dream – we talk – I build",
+  "email": "rey@creyation.ch",
+  "foundingDate": "2017",
+  "founder": { "@type": "Person", "name": "Rey Gafner", "jobTitle": "Inhaber", "honorificSuffix": "MSc UZH" },
+  "address": { "@type": "PostalAddress", "streetAddress": "Dörflistrasse 1C", "postalCode": "8903", "addressLocality": "Birmensdorf", "addressRegion": "ZH", "addressCountry": "CH" },
+  "location": { "@type": "Place", "name": "Werkstatt Creyation Gafner", "address": { "@type": "PostalAddress", "streetAddress": "Stifelacher 3", "postalCode": "8132", "addressLocality": "Hinteregg", "addressRegion": "ZH", "addressCountry": "CH" } },
+  "areaServed": { "@type": "Country", "name": "Schweiz" },
+  "knowsAbout": ["Spezialanfertigungen für Innenarchitektur", "Ladenbau und Raumgestaltung", "Inszenierungen und Skulpturen für Marken und Events", "Möbelbau", "CNC-Fräsen", "3D-Druck", "CAD und Visualisierung", "Camperausbau", "Produktdesign"],
+  "sameAs": ["https://www.instagram.com/creyationgafner", "https://www.instagram.com/casadelpaw"]
+}
+</script>
+{% if page.layout == 'projekt' %}<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": {{ page.titel | jsonify }},
+  "description": {{ seo_text | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "image": "{{ seo_bild | absolute_url }}",
+  {% if page.jahr %}"dateCreated": "{{ page.jahr }}",
+  {% endif %}{% if page.ort %}"locationCreated": { "@type": "Place", "name": {{ page.ort | jsonify }} },
+  {% endif %}"genre": {{ page.kategorie | join: ", " | jsonify }},
+  "inLanguage": "de-CH",
+  "creator": { "@id": "{{ '/' | absolute_url }}#firma" }
+}
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Start", "item": "{{ '/' | absolute_url }}" },
+  { "@type": "ListItem", "position": 2, "name": "Projekte", "item": "{{ '/projekte/' | absolute_url }}" },
+  { "@type": "ListItem", "position": 3, "name": {{ page.titel | jsonify }}, "item": "{{ page.url | absolute_url }}" } ] }
+</script>{% endif %}
+{% if seo_art == 'produkt' %}<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ page.titel | jsonify }},
+  "description": {{ seo_text | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "image": "{{ seo_bild | absolute_url }}",
+  "category": {{ page.linie | jsonify }},
+  "brand": { "@type": "Brand", "name": "Creyation Gafner" },
+  "manufacturer": { "@id": "{{ '/' | absolute_url }}#firma" }
+}
+</script>{% endif %}
+{% if page.url == '/' %}<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebSite", "name": "Creyation Gafner", "url": "{{ '/' | absolute_url }}", "inLanguage": "de-CH", "publisher": { "@id": "{{ '/' | absolute_url }}#firma" } }
+</script>{% endif %}

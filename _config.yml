@@ -1,0 +1,37 @@
+# Creyation Gafner – Website
+title: Creyation Gafner
+description: Creyation Gafner baut, was es noch nicht gibt. Spezialanfertigungen, Raumgestaltung, Installationen, eigene Produkte und Camperausbau.
+lang: de-CH
+url: "https://www.creyation.ch"
+# Live-Seite www.creyation.ch. Für eine Vorschau in einem anderen Repository: baseurl "/name-des-repositorys" und vorschau: true
+baseurl: ""
+vorschau: false
+
+# Kontaktformular: Adresse des Formulardienstes (z. B. https://formspree.io/f/xxxxxxxx).
+# Leer = das Formular öffnet das E-Mail-Programm.
+formular_ziel: "https://formspree.io/f/xgavprqb"
+# UID aus dem Handelsregister (zefix.ch), z. B. "CHE-123.456.789". Leer = wird nicht angezeigt.
+uid: "CHE-422.243.493"
+
+# Titel der Startseite in den Suchergebnissen (rund 60 Zeichen)
+start_titel: "Creyation Gafner – Spezialanfertigungen, Möbel und Installationen"
+# Bild, das beim Teilen eines Links erscheint (1200 × 630 Pixel)
+teilen_bild: /assets/bilder/teilen.jpg
+# Google Search Console: Bestätigungscode (Meta-Tag). Leer = wird nicht ausgegeben.
+google_site_verification: "D3_F3Rpj6CyC71LVBOm6-i6IbAN6rqh1e47JZSeMsZw"
+
+# Bereiche für den Projektfilter (Reihenfolge = Reihenfolge der Knöpfe)
+kategorien:
+  - Raumgestaltung
+  - Inszenierung & Events
+  - Möbel & Objekte
+  - 3D-Druck & Engineering
+  - Camperausbau
+
+defaults:
+  - scope: { path: "projekte" }
+    values: { layout: projekt }
+  - scope: { path: "produkte" }
+    values: { layout: produkt }
+
+exclude: [README.md, ANLEITUNG.md, HANDOFF.md, Gemfile, Gemfile.lock, vendor]
