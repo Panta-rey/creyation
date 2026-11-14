@@ -51,10 +51,17 @@
     if (knopf) knopf.addEventListener('click', function () {
       if (buehne.classList.contains('fertig')) abspielen(); else sofort();
     });
-    // nur beim ersten Besuch abspielen; danach direkt das Logo
-    var gesehen = false;
-    try { gesehen = sessionStorage.getItem('cg-einstieg') === '1'; sessionStorage.setItem('cg-einstieg', '1'); } catch (e) {}
-    if (ruhig || gesehen || !window.KartenFaltung) sofort(); else abspielen();
+    // Abspielen bei jedem Aufruf von aussen (Link, Eingabe, Lesezeichen) und beim Neuladen;
+    // direkt das Logo nur, wenn man innerhalb der Website zur Startseite zurückkehrt.
+    // (Früher per sessionStorage: Auf dem Handy lebt ein Tab tagelang, dann lief die Faltung nie.)
+    var intern = false;
+    try {
+      var eintrag = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+      var art = eintrag ? eintrag.type : '';
+      var herkunft = document.referrer ? new URL(document.referrer) : null;
+      intern = art === 'back_forward' || (art !== 'reload' && !!herkunft && herkunft.host === location.host);
+    } catch (e) {}
+    if (ruhig || intern || !window.KartenFaltung) sofort(); else abspielen();
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (e) {
         kopf.classList.toggle('hell', !e[0].isIntersecting);

@@ -361,3 +361,28 @@ dialog.gross .vor { right: 1rem; bottom: 1rem; } dialog.gross .rueck { left: 1re
 .textseite h2 { font-size: 1.25rem; font-weight: 600; margin: 2.2rem 0 .6rem; letter-spacing: .01em; }
 .textseite p { max-width: 42rem; }
 .danke { background: #fff; padding: 1rem 1.2rem; border-left: 2px solid #000; }
+
+/* ---------- Feinschliff Handyansicht (14.11.2026) ---------- */
+/* Lange Wörter in Titeln (z. B. «Datenschutzerklärung») dürfen die Seite nicht verbreitern */
+h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
+/* Knöpfe im Fliesstext (z. B. Seite 404) mit Abstand, auch beim Umbruch */
+.seitenkopf p .btn { margin: .6rem .4rem 0 0; }
+@media (max-width: 600px) {
+  /* Einstieg: Knopf unten in der Mitte statt oben über dem Logo */
+  .buehne-steuerung { top: auto; right: auto; left: 50%; transform: translateX(-50%); bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); white-space: nowrap; font-size: .8rem; }
+  .buehne .logo-box { padding-bottom: 3.25rem; }
+  .logo { height: min(54svh, 34rem); }
+  /* Kundenliste als fortlaufende Zeilen statt 25 Einzelzeilen */
+  .referenzen .liste { columns: auto; line-height: 2; }
+  .referenzen li { display: inline-block; max-width: 100%; padding: 0; margin-right: .55em; }
+  .referenzen li:not(:last-child)::after { content: "·"; margin-left: .55em; color: var(--grau); }
+}
+/* Fingerbedienung: Ziele mindestens rund 44 Pixel */
+@media (pointer: coarse) {
+  .menue { min-height: 2.75rem; padding-left: 1rem; padding-right: 1rem; }
+  .filter button { min-height: 2.75rem; }
+  .farbe, .muster .farbe { width: 2.75rem; height: 2.75rem; }
+  .fuss ul { gap: .5rem 1.5rem; }
+  .fuss ul a { display: inline-block; padding: .65rem 0; }
+  .zurueck, .textlink { display: inline-block; padding: .55rem 0; }
+}
